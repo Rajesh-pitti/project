@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>Student Feedback — Project Locality</h1>
+
+      <form id="feedbackForm" class="form" novalidate>
+        <div class="row">
+          <label for="studentName">Student Name</label>
+          <input id="studentName" name="studentName" type="text" required placeholder="Full name">
+        </div>
+
+        <div class="row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="row">
+          <label for="project">Project / Subject</label>
+          <input id="project" name="project" type="text" required placeholder="Project name">
+        </div>
+
+        <div class="row">
+          <label for="locality">Locality</label>
+          <input id="locality" name="locality" type="text" placeholder="City / Town / College">
+        </div>
+
+        <div class="row">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">Select rating</option>
+            <option value="5">5 — Excellent</option>
+            <option value="4">4 — Very Good</option>
+            <option value="3">3 — Good</option>
+            <option value="2">2 — Fair</option>
+            <option value="1">1 — Poor</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" rows="4" placeholder="Enter feedback..."></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Submit Feedback</button>
+          <button type="button" id="clearBtn">Clear All</button>
+          <button type="button" id="exportBtn">Export CSV</button>
+        </div>
+      </form>
+
+      <section class="submissions">
+        <h2>Submissions</h2>
+        <div id="empty" class="muted">No feedback yet.</div>
+        <table id="submissionsTable" class="table" aria-live="polite">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Project</th>
+              <th>Locality</th>
+              <th>Rating</th>
+              <th>Comments</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="feedback.js"></script>
+  </body>
+</html>
